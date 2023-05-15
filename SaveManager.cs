@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
-using UnityEditor;
 using System.IO;
+using UnityEditor;
 
 public class SaveManager : MonoBehaviour
 {
@@ -51,24 +48,6 @@ public class SaveManager : MonoBehaviour
         Save();
     }
 
-
-#if UNITY_EDITOR
-    [MenuItem("Edit/Clean Save")]
-    static void CleanSave()
-    {
-        PlayerPrefs.DeleteAll();
-        if (File.Exists(Application.persistentDataPath + "/save.json"))
-        {
-            File.Delete(Application.persistentDataPath + "/save.json");
-        }
-    }
-
-    [MenuItem("Edit/Open Save Folder")]
-    static void OpenSaveFolder()
-    {
-        EditorUtility.RevealInFinder(Application.persistentDataPath);
-    }
-#endif
 }
 
 [System.Serializable]

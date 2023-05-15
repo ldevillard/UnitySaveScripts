@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -64,14 +62,6 @@ public class SaveManagerBinary : MonoBehaviour
     private void OnApplicationQuit()
     {
         Save();
-    }
-
-    public static void DeleteSave()
-    {
-        if (File.Exists(Application.persistentDataPath + "/save.data"))
-        {
-            File.Delete(Application.persistentDataPath + "/save.data");
-        }
     }
 }
 
